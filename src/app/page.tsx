@@ -10,7 +10,8 @@ async function getData(path) {
 
 
 export default async function Products() {
-  const path="http://localhost:3000/api/products/"
+  //const path="http://localhost:3000/api/products"
+  const path= `${process.env.API_URL}/api/products`
   
 
     const data= await getData(path);
