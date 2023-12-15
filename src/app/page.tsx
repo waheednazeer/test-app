@@ -1,7 +1,9 @@
+
+import {config} from '../../src/app/libs/config';
 import ProductList from './components/ProductList'
 
 async function getData(path) {
-  const data = await fetch(path, {
+    const data = await fetch(path, {
     cache: "no-store"
   });
   if (!data.ok) {
@@ -20,8 +22,9 @@ async function getData(path) {
 
 
 export default async function Products() {
+  const path=config.apiPrefix + config.apiHost + "/api/products";
   //const path="http://localhost:3000/api/products"
-  const path= `${process.env.API_URL}/api/products`
+  //const path= `${process.env.API_URL}/api/products`
   
   
     const data= await getData(path);
