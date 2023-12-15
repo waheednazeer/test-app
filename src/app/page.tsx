@@ -8,13 +8,21 @@ async function getData(path) {
   return data.json();
 }
 
+/**************************************************************
+ * This json data is for testing purpose.
+ * 
+ * 
+ ***********************************************************/
+
+
+
 
 export default async function Products() {
   //const path="http://localhost:3000/api/products"
-  const path= `${process.env.API_URL}/api/products`
+  //const path= `${process.env.API_URL}/api/products`
   
-
-    const data= await getData(path);
+  
+    //const data= await getData(path);
 
     
   return (
@@ -22,8 +30,9 @@ export default async function Products() {
         <div className="my-5 flex flex-col gap-4">
           <h1 className="text-3x1 font-bold">Products List</h1>
         </div>
-         <ProductList products={data} />      
+            TEST
       </div>
       
   )
 }
+//<ProductList products={data} />   
