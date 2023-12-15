@@ -3,13 +3,15 @@ import {config} from '../../src/app/libs/config';
 import ProductList from './components/ProductList'
 
 async function getData(path) {
-    const data = await fetch(path, {
+    const res = await fetch(path, {
     cache: "no-store"
   });
-  if (!data.ok) {
-    throw new Error("Failed to fetch data");
+   try {
+    const data = await res.json();
+    return data;
+  } catch(error) {
+    console.log(error)
   }
-  return data.json();
 }
 
 /**************************************************************
