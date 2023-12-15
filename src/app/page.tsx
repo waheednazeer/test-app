@@ -1,7 +1,9 @@
 import ProductList from './components/ProductList'
 
 async function getData(path) {
-  const data = await fetch(path);
+  const data = await fetch(path, {
+    cache: "no-store"
+  });
   if (!data.ok) {
     throw new Error("Failed to fetch data");
   }
